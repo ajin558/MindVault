@@ -1,0 +1,18 @@
+# 忽略真实环境密钥
+.env
+
+# 忽略庞大的虚拟环境和缓存 (极其关键，防止卡死！)
+venv/
+__pycache__/
+*.pyc
+
+# 忽略商业机密数据库
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# 忽略日志和生成的报告文件
+reports/
+static/reports/
+*.log
