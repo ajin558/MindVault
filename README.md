@@ -1,3 +1,6 @@
+<img width="1919" height="1079" alt="屏幕截图 2026-03-27 223019" src="https://github.com/user-attachments/assets/6a296636-b94e-4118-8938-80e9407469e3" />
+<img width="1919" height="1079" alt="屏幕截图 2026-03-27 222407" src="https://github.com/user-attachments/assets/fd30e585-265a-4deb-a91f-b475dff04135" />
+
 \# 🧠 MindVault: 工业级全异步多智能体架构 (Deep Research Agent)
 
 
