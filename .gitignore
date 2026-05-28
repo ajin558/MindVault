@@ -1,18 +1,59 @@
-# 忽略真实环境密钥
+# Environment & secrets
 .env
+.env.swp
 
-# 忽略庞大的虚拟环境和缓存 (极其关键，防止卡死！)
+# Virtual environment & Python cache
 venv/
 __pycache__/
 *.pyc
 
-# 忽略商业机密数据库
+# Node modules
+node_modules/
+
+# Databases (business data)
 *.db
 *.db-journal
 *.db-wal
 *.db-shm
 
-# 忽略日志和生成的报告文件
-reports/
-static/reports/
+# Logs & reports
 *.log
+reports/
+nginx_monitor.pid
+
+# Generated images/charts
+*.png
+
+# Uploads & exports
+uploads/
+exports/
+
+# Workspaces (build artifacts)
+workspaces/
+
+# Cache & knowledge data (runtime data)
+mindvault_cache/
+mindvault_knowledge/
+neo4j_data/
+
+# Empty/abandoned dirs
+NapCat/
+my_vectordb/
+
+# Backup files
+*.save
+*.backup.*
+
+# Temp scripts
+sandbox_*.py
+
+# Data exports
+*.csv
+
+# External scripts (not part of project)
+napcat.sh
+tcp.sh
+
+# IDE
+.idea/
+.vscode/

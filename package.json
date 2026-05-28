@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@e2b/code-interpreter": "^2.4.0",
+    "dotenv": "^17.4.2"
+  }
+}

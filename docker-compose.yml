@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # 1号微服务：你的大模型核心后端
+  mindvault-backend:
+    build: .
+    container_name: mindvault-backend
+    restart: always
+    ports:
+      - "8000:8000"
+    # 🛡️ 极其关键：挂载物理卷，确保容器重启后，你的记忆图谱、密钥、上传文件都不会丢失！
+    volumes:
+      - ./.env:/app/.env
+      - ./mindvault_knowledge:/app/mindvault_knowledge
+      - ./mindvault_cache:/app/mindvault_cache
+      - ./exports:/app/exports
+      - ./uploads:/app/uploads
+      - ./static:/app/static
+      - ./mindvault_skills.db:/app/mindvault_skills.db
+      - ./mindvault_keys.db:/app/mindvault_keys.db
+      - ./mindvault_checkpoints.db:/app/mindvault_checkpoints.db
+    depends_on:
+      - redis
+
+  # 2号微服务：Redis 内存数据库 (为下一步的 Celery 高并发队列做准备)
+  redis:
+    image: redis:alpine
+    container_name: mindvault-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
